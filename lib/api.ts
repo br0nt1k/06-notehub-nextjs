@@ -43,7 +43,7 @@ export async function fetchNotes(
   return response.data;
 }
 
-export async function removeNote(id: number): Promise<Note> {
+export async function removeNote(id: string): Promise<Note> {
   const response = await axios.delete<Note>(`/notes/${id}`, {
     headers: {
       authorization: `Bearer ${myToken}`,
@@ -61,7 +61,7 @@ export async function createNote(note: NoteFormData): Promise<Note> {
   return response.data;
 }
 
-export async function fetchNoteById(id: number): Promise<Note> {
+export async function fetchNoteById(id: string): Promise<Note> {
   const response = await axios.get<Note>(`/notes/${id}`, {
     headers: {
       authorization: `Bearer ${myToken}`,
