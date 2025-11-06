@@ -12,7 +12,7 @@ interface NoteDetailsProps {
 
 export default async function NoteDetails({ params }: NoteDetailsProps) {
   const { id } = await params;
-  const noteId = parseInt(id);
+  const noteId = id;
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
